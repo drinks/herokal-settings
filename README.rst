@@ -2,6 +2,8 @@
 herokal-settings
 ================
 
+**Not quite ready for primetime, but soon.**
+
 Provides crosswalk between a Foreman-style .env file and your
 django local settings.
 
