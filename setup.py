@@ -13,5 +13,6 @@ setup(
     long_description=long_description,
     license='BSD',
     packages=find_packages(),
+    install_requires=['dj-database-url'],
     platforms=['any']
 )
