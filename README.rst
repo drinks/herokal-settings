@@ -2,8 +2,6 @@
 herokal-settings
 ================
 
-**Not quite ready for primetime, but soon.**
-
 Provides crosswalk between a Foreman-style .env file and your
 django local settings.
 
@@ -32,6 +30,9 @@ At the bottom of your settings.py, instead of::
 Use herokal.settings::
 
     from herokal.settings import *
+
+Now, when you run ./manage.py runserver, your `local_settings.py` will be loaded,
+but when you run `foreman start`, your `.env` will be used.
 
 Options
 -------

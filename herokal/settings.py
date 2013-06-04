@@ -7,10 +7,12 @@ if 'DEBUG' in os.environ.keys():
     # Load .env file and
     # Parse database configuration from $DATABASE_URL
     import dj_database_url
-    DATABASES = {}
-    DATABASES['default'] = dj_database_url.config()
+    DATABASES = {
+        'default': dj_database_url.config(),
+    }
     # Honor the 'X-Forwarded-Proto' header for request.is_secure()
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
     for setting, value in os.environ.iteritems():
         if re.search(r'^[A-Z][A-Z0-9_]+$', setting):
             try:

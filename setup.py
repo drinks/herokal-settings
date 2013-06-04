@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 long_description = open('README.rst').read()
 
 setup(
-    name="herokal_settings",
+    name="herokal-settings",
     version=__version__,
     author="Dan Drinkard",
     author_email="dan.drinkard@gmail.com",
