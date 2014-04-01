@@ -17,7 +17,7 @@ Add `herokal` to `INSTALLED_APPS`
 
 Install the heroku-config plugin::
 
-    heroku plugins:install git://github.com/ddolar/heroku-config.git
+    heroku plugins:install git://github.com/ddollar/heroku-config.git
 
 Run the management command to export your local_settings.py::
 
