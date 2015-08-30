@@ -21,7 +21,7 @@ if 'DEBUG' in os.environ.keys():
                 setattr(sys.modules[__name__], setting, value)
 else:
     try:
-        from local_settings import *
+        from .local_settings import *
     except ImportError as e:
         print("""Caught %s trying to import local_settings. Please make sure
                  local_settings.py exists and is free of errors.""")
