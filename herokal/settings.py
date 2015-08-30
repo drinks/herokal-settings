@@ -23,9 +23,8 @@ else:
     try:
         from local_settings import *
     except ImportError as e:
-        print """Caught %s trying to import local_settings. Please make sure
-                 local_settings.py exists and is free of errors.
-              """
+        print("""Caught %s trying to import local_settings. Please make sure
+                 local_settings.py exists and is free of errors.""")
         raise
 
 try:
