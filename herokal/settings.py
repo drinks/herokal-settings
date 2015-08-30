@@ -22,7 +22,7 @@ if 'DEBUG' in os.environ.keys():
 else:
     try:
         from local_settings import *
-    except ImportError, e:
+    except ImportError as e:
         print """Caught %s trying to import local_settings. Please make sure
                  local_settings.py exists and is free of errors.
               """
