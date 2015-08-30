@@ -50,7 +50,7 @@ class Command(BaseCommand):
 
             try:
                 flo.write(u"%s=%s\n" % (setting, json.dumps(value, default=self.__class__._datehandler)))
-            except Exception, e:
+            except Exception as e:
                 failed_settings.append("%s: %s" % (setting, e))
 
         if options.get('outfile', 'None') != 'None':
