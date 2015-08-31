@@ -1,7 +1,7 @@
 import re
 import json
 import sys
-import io
+import six
 from importlib import import_module
 from optparse import make_option
 
@@ -36,11 +36,11 @@ class Command(BaseCommand):
     VALID_SETTING = re.compile(r'^[A-Z][A-Z0-9_]+$')
 
     def handle(self, *args, **options):
-        flo = io.StringIO()
+        flo = six.StringIO()
         failed_settings = []
         local_settings = import_module(options.get('settings_module'))
         settings_d = local_settings.__dict__
-        for setting, value in settings_d.items():
+        for setting, value in six.iteritems(settings_d):
             if not self.VALID_SETTING.search(setting):
                 continue
 

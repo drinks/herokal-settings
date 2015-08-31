@@ -2,6 +2,7 @@ import os
 import re
 import json
 import sys
+import six
 import importlib
 
 
@@ -26,7 +27,7 @@ if 'DEBUG' in os.environ.keys():
     # Honor the 'X-Forwarded-Proto' header for request.is_secure()
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-    for setting, value in os.environ.iteritems():
+    for setting, value in six.iteritems(os.environ):
         apply_setting(setting, value, parse_json=True)
 else:
     try:
@@ -44,6 +45,7 @@ try:
     del re
     del json
     del sys
+    del six
     del local_settings
     del apply_setting
 except:
