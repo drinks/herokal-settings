@@ -1,7 +1,7 @@
 import re
 import json
 import sys
-import StringIO
+import io
 from importlib import import_module
 from optparse import make_option
 
@@ -36,11 +36,11 @@ class Command(BaseCommand):
     VALID_SETTING = re.compile(r'^[A-Z][A-Z0-9_]+$')
 
     def handle(self, *args, **options):
-        flo = StringIO.StringIO()
+        flo = io.StringIO()
         failed_settings = []
         local_settings = import_module(options.get('settings_module'))
         settings_d = local_settings.__dict__
-        for setting, value in settings_d.iteritems():
+        for setting, value in settings_d.items():
             if not self.VALID_SETTING.search(setting):
                 continue
 
@@ -69,4 +69,4 @@ class Command(BaseCommand):
         if hasattr(obj, 'isoformat'):
             return obj.isoformat()
         else:
-            raise TypeError, 'Object of type %s with value of %s is not JSON serializable' % (type(obj), repr(obj))
+            raise TypeError('Object of type %s with value of %s is not JSON serializable' % (type(obj), repr(obj)))
